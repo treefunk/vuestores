@@ -1,19 +1,33 @@
 <template>
-  <div id="app">
+  <div id="app" :style="{ backgroundColor: bgcolor}">
     <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button-red>Jhondee</button-red>
+    <button-blue>eednohj</button-blue>
+    <button-green>Treefunk</button-green>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+
+
+import ButtonBlue from './components/ButtonBlue.vue'
+import ButtonRed from './components/ButtonRed.vue'
+import ButtonGreen from './components/ButtonGreen.vue'
 
 export default {
   name: 'app',
+  computed: {
+    bgcolor(){
+      return this.$store.state.buttoncolor
+    }
+  },
   components: {
-    HelloWorld
+    ButtonBlue,ButtonRed,ButtonGreen
   }
 }
+
+
 </script>
 
 <style>
